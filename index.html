@@ -1,24 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>Damir's Portfolio</title>
-</head>
-<body>
-    <div class="container">
-        <div class="split left">
-            <h1>Biography</h1>
-            <a href="biography.html" class="button">Read More</a>
-        </div>
-        <div class="split right">
-            <h1>Projects</h1>
-            <a href="projects.html" class="button">Read More</a>
-        </div>
-    </div>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <script src="main.js"></script>
+    <title>Damir Hadžagić's Portfolio</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico">
+    <!-- Font Awesome JS -->
+    <script defer src="fontawesome/solid.min.js"></script>
+    <script defer src="fontawesome/fontawesome.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Page Content  -->
+        <div id="content" class="mt-4">
+            <h2>About Me</h2>
+            <p style="margin-right: 2em">Hello! My name is Damir Hadžagić, I come from Sarajevo, Bosnia & Herzegovina and I am 17 years old. As you can tell 
+                by this front-end I am not much of a designer or a front-end developer but I do know how to develop backends! 
+                I mostly work on APIs but I do work on backends for web applications too. </p>
+
+            <p>Contact:</p>
+            <ul>
+                <li><a href="https://github.com/XiovV" target="_blank">GitHub</a></li>
+                <li>Email: <a href="mailto:damirhadzagic@tutanota.com">damirhadzagic@tutanota.com</a></li>
+                <li id="pgp-key" onclick="onOff()">PGP</li>
+                <p id="pgp-paragraph"></p>
+            </ul>
+
+            <div class="line"></div>
+
+            <h2>Languages, Frameworks & Other Skills</h2>
+            <p>Languages:</p>
+            <ul>
+                <li>JavaScript</li>
+                <li>Go</li>
+                <li>Python</li>
+                <li>Flutter/Dart</li>
+            </ul>
+
+            <p>Frameworks:</p>
+            <ul>
+                <li>NodeJS</li>
+                <li>Django</li>
+            </ul>
+
+            <p>Other Skills:</p>
+            <ul>
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>Git</li>
+                <li>MongoDB</li>
+                <li>Redis</li>
+                <li>Linux System Administration</li>
+                <li>Proper Development To Production Workflow</li>
+            </ul>
+
+            <div class="line"></div>
+
+            <h2>Projects</h2>
+            <h5><a href="https://play.google.com/store/apps/details?id=com.txtvision.android" target="_blank">TxT (Google Play Store)</a></h5>
+            <p>TxT is an independent real-time chatting application that allows you to write anything you want in your native language, and the person you are chatting with will read the exact same conversation but in their <br> native language.</p>
+            <p>For this project I used NodeJS for the backend along with dependencies such as Express, Socket.io, mongoose and <span onclick='showMore()' style="font-weight:bold">more</span>. This is by far the biggest project I have ever worked on/still working on.</p>
+            <p>Things I learned:</p>
+            <ul>
+                <li>How real-time chatting applications work</li>
+                <li>How to write clean and scalable code</li>
+                <li>What APIs are and how they work</li>
+                <li>Database design</li>
+            </ul>
+
+            <br>
+
+            <h5><a href="https://github.com/XiovV/PocketWeather" target="_blank">PocketWeather (GitHub)</a></h5>
+            <p>PocketWeather is a free and open source minimalistic weather app. It is designed to show you the most important data about the weather without too much clutter on the screen.</p>
+            <p>I decided to work on this project because I wanted to learn Flutter and Dart plus I always wanted to have a minimalistic weather app on my phone.</p>
+            <p>This project was developed with Flutter/Dart, NodeJS and Go. It has two versions of the same backend: One made with NodeJS and the other one with Go</p>
+            <p>Things I learned:</p>
+            <ul>
+                <li>Basics of how Flutter and Dart work</li>
+                <li>A bit of Android development in general</li>
+            </ul>
+        </div>
+    </div>  
+
+    <script>
+        let showing = false;
+        let pgp = document.getElementById('pgp-paragraph');
+        function showMore() {
+            alert("bcrypt, firebase, jsonwebtoken, twilio, request");
+        }
+
+        function onOff() {
+            if(showing == false) { pgp.innerHTML = `-----BEGIN PGP PUBLIC KEY BLOCK----- <br>
+
+mQINBFyaPoQBEAC1ltpTVxMLiwZr0kQUZi5rQmxu1+n2KaTVsNAQOpe38JBMe5DR <br> A85/P+TtyEoxpFZAD4OLch0IqvhGxEA7dTB3mlHD0hyIib531DF/3eP/rtwtCREf <br> 1NWXEzWzXktl4JT8qiZYFcMT/ZblpV/RXfF7rIJus3T5qcZU8jVGSanZhgOaRJ5A <br> rAnaGlIQ+iEqxsAYvg+NMUfWqitsGA6eMWnBZlfyKmAxOcuHTRKMQ2rlgcw4FN1u <br> nZ0jsDo8P9plvA4XeAffP++eVr64jpu0q4HKyAMqRbhly37NonmD6IPWorRNM7fK <br> YUzqYwYpvpyQghkyDRIOWuvtL2QDx31G/f/QlEus+RSEDrSrQMtStrVl3eHS5gpp <br> 2bpQyNl69Q69ALe/XGVBnFs/1mMCExXyzO+L9MPxgLl03NJERPJi7kNTMnVvDg3s <br> PoymjxZRN/OCY9vHaGC+txWctdkm50dr+mTP4fQxn5jeciAYnvkr/2zgAm33+M+t <br> /K3GpyAZMrxN/V/YMGoZlL4uOQJIaPOaPluXLg2xFFygUsLY0p0FDqnf+skYzdnt <br> cpjnwLavl1r451QIYLuoZ37vHWBbzRvF6pfOqqYdNnegYtxFybvu3/fx/CQSfF1z <br> Vs1tp9zyC9JLZqYGSEO118IuDlyJKYe4QHx/GXXLnhaHTLbE3rkKa+23YQARAQAB <br> tBJ4aW92dkB0dXRhbm90YS5jb22JAk4EEwEIADgWIQRimUfOgWg1O+wtGte7xifC <br> d1rUFwUCXJo+hAIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRC7xifCd1rU <br> Fz6ND/oDZiq0Jp2e/m4iy8z+NYjMggzEAgj1ZDUPhf1xURku5x1PRMDLyFxDtp/v <br> EjP+mmjlsh1FNJBtz70yexdBOHx9qa/PMgZVfJ3RX76w9CjVpf2ZAACWhNu5dAKe <br> 4uF4wuiauUJ0b6sCA1IWinv2UlqAZxzTkHsSB7j1ioihbQiHkvbOqAOBBHdrL81r <br> 3Bn8Lbw1ksDvhZc22z8ZP+4FkF95qT/5VLoTZ3UUupV9Jo5QEZj7VTnOu14EovdP <br> L0vnYYaP7k47U9UD16837ogqpFnpSDTqQKPVO8JxmXohoy5ClZ3XFE+E5IMcvMwO <br> ARnfUnuF2qINcCTEM3rZCHK1DbmpBZ/09603Tu9GqR/dQsguwuVV7RQGE59bH77l <br> JgRYi+VRZaFDvYGhKNhZWRUZ2q4IuAP05Dt3ap+aIVkIUHZfc/KNJxrTaY+2nUoQ <br> ibduRwBjVcX0iD1q8OtRhxZt5pEwN7coW0riKQtnNmcXOygZwO4h+dED9bBr443s <br> q/gIj28BPfQ0kSDEO9WQpTL9JiNlodW/RTfLUl38y/q9gz3aEyKx66gk8+NqbdvP <br> JoTl/bodVaLniEegtci2GJ2qYLI9RPiTocRY9WvvHKAV7yBt+spLovDI8ebkc6Zo <br> wUX83id/pJbxRMnLbjaXin8DlHm7eGsjbWLUSI2t68wfI/B3DLkCDQRcmj6EARAA <br> xz192PVZ5QYfeqoVgjyaaZQCtLUn6OlEgdwodjHcPuWKbDNVXJ/fu3YDVQmki2E4 <br> aGoSk9PkbFcLANNWWadZpLjs/4uspB+48wY0fgmDUgpHVOkXGcveknDzXOtZB8vP <br> QaFY7TiaEMCl9D5+J2AIMrUTw6BuUolvL7gdyAbVxKzkZOJo4MYCnZzl4DRG7/4P <br> 3iM9ulV+HfkcRwbOr24ClS9hR+oJh1HWzdLwfeIXPecoFbmbH43U+bcBMuwzWLqU <br> lfsZ7Rwf+xJu/rkyUZNT4b60IZlPZkohiQg8vSq1dFJfQ099/OqMv2v892S52eYO <br> eP1+PFO/0/VeRu8Usoz9dZB8GkaCGa73KDybZlj1re/ijE7Phi9OBaSABt6pMCzY <br> /bE8QmzrPU3dNw0ak+hz4dfewsjCJu9X1qZf96uD1gXB4Lbqrn5tiPd84/ON5PqD <br> HaG+peCTGrigNLLg7pg9qJkEsD28KWUQRuKef5X7H3UwzQnIME0OmewP9vK8i5JS <br> RAR4nuVzg/zDidae83WCqCErB3fVvB47EOY8qXW0tcAxqn42cR6gFAUjvumRlbxY <br> eVnXP/HAEp34tbRbvw+EjWhg4bGKN7IVX78tkgJgApL2C71YUnuyw2E7RzHbt3II <br> ZDW6sHUgpN2+TIrpTjf54fVaH6YmVSKyaJ3BR432GtUAEQEAAYkCNgQYAQgAIBYh <br> BGKZR86BaDU77C0a17vGJ8J3WtQXBQJcmj6EAhsMAAoJELvGJ8J3WtQXfh4QAKmN <br> asVyeKslIOcP3de8VX8Bj5wBRUaEs8nry32gWcugh3JRR30ZIYXPISo83O2tIRbJ <br> fTla5OnMfc89Ep2lVTahUkCDdZ1Fvx/X9drsiLvciaWbtlo9akzfNQToukqKEROy <br> IatHM2I6owAB6zFe68qmr8BE/uy9sBNY/IiHuBWyWsHBRSgm3RSYVJYU+jKK9nMw <br> 4XUy8OOokYnW0GzsxdzCq7E+WhEhZJzhoxEKYvK5h3G1D2KOvFe6wgWdZmCnM+pl <br> 2ODt1GjtZj1xACm4KeKPYjALiitSLSN7lFK8/mtrwFHXAG7JGkP/J3J0oOH7w7Pt <br> bcketUKpB7hsVJO+lmnDs6I3Zuhv2K6fC94Kme+jpt5kHQyM6ys24vmtmPfADz83 <br> x/j+qZqDfrZ1SMzK7JZWTs/Yy2MeeJOFjbB75L9LVYPuw+00elf/cpZj1dklBniD <br> 737iJshP+ewlU9ZHohP9GW5ToFDSjgicH6N0YJYlOMS4DwsHiMBOPJPGZoHh7sJi <br> pCorXZJ8e10A9DsdBtX61Dq6eJ5stXqPnFzsfzzIxpm7ztRewkvOR/rQ7fN1RQtS <br> 1XSgSu8DhPq7MPyaFcKXBY/GLcZwv9jQ/9MdbhsrMZLVL2meICJB090uqWllXTjd <br> qWIrkRjWBhmdmv/4/9cCFypmgxu2nK2s8Wcg5Yqf <br> =JkhN <br> 
+
+-----END PGP PUBLIC KEY BLOCK-----
+`;
+showing = true;
+}  else {pgp.textContent = ""
+        showing = false;
+};
+           
+                
+        }
+    </script>
 </body>
+
 </html>
